@@ -43,6 +43,7 @@ transform = transforms.Compose([
     transforms.Grayscale(num_output_channels=1),
     transforms.Resize((200, 200)),
     transforms.ToTensor(),
+    transforms.Normalize(mean=[0.5], std=[0.5])
 ])
 
 dataset = CustomDataset(pixels, labels, transform=transform)
