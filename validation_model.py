@@ -1,15 +1,13 @@
 import torch
 import numpy as np
 import torch.nn as nn
-from PIL import Image
-import matplotlib.pyplot as plt
 from torch.utils.data import DataLoader
 from torchvision import transforms
 import torchvision.models as models
 from torchvision.models import ResNet18_Weights
 
 from CustomDataset import CustomDataset
-from train_eval import evaluate_model
+from train_evaluation import evaluate_model, predict_and_display
 from upload_npz import load_data_from_npz
 
 # Define your device
@@ -51,7 +49,8 @@ transform = transforms.Compose([
 dataset = CustomDataset(pixels, labels, transform=transform)
 dataloader = DataLoader(dataset, batch_size=200, shuffle=True)
 
-torch.cuda.empty_cache()
 evaluate_model(model=model,
                dataloader=dataloader,
                device=device)
+
+predict_and_display(model, dataloader, device)
