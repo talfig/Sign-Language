@@ -1,2 +1,2 @@
-# Sign-Language
+# Sign-language
 Sign language recognition.
