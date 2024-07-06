@@ -1,7 +1,7 @@
 import torch
 import numpy as np
 import torch.nn as nn
-from torch.utils.data import DataLoader, Dataset
+from torch.utils.data import DataLoader
 from torchvision import transforms
 import torchvision.models as models
 from torchvision.models import ResNet18_Weights

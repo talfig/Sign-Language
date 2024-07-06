@@ -1,4 +1,5 @@
 from torch.utils.data import Dataset
+from PIL import Image
 
 
 class CustomDataset(Dataset):
@@ -11,8 +12,9 @@ class CustomDataset(Dataset):
         return len(self.labels)
 
     def __getitem__(self, idx):
-        img = self.pixels[idx].reshape(200, 200).astype('float32')
-        label = self.labels[idx].astype('int64')
+        img = self.pixels[idx].reshape(200, 200)
+        img = Image.fromarray(img.astype('uint8'), 'L')  # Convert numpy array to PIL Image in grayscale mode
+        label = self.labels[idx].astype('int64')  # Convert labels to Long tensor
 
         if self.transform:
             img = self.transform(img)

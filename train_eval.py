@@ -37,6 +37,8 @@ def evaluate_model(model, dataloader, device):
             _, predicted = torch.max(outputs.data, 1)
             total += targets.size(0)
             correct += (predicted == targets).sum().item()
+            # Clear any cached GPU memory
+            torch.cuda.empty_cache()
 
     accuracy = 100 * correct / total  # Calculate accuracy as a percentage
     print(f"Total Correct: {correct}")
