@@ -1,6 +1,8 @@
 import torch
 import numpy as np
 import torch.nn as nn
+from PIL import Image
+import matplotlib.pyplot as plt
 from torch.utils.data import DataLoader
 from torchvision import transforms
 import torchvision.models as models
@@ -44,12 +46,12 @@ transform = transforms.Compose([
     transforms.Grayscale(num_output_channels=1),
     transforms.Resize((200, 200)),
     transforms.ToTensor(),
-    transforms.Normalize(mean=[0.5], std=[0.5])
 ])
 
 dataset = CustomDataset(pixels, labels, transform=transform)
 dataloader = DataLoader(dataset, batch_size=200, shuffle=True)
 
+torch.cuda.empty_cache()
 evaluate_model(model=model,
                dataloader=dataloader,
                device=device)

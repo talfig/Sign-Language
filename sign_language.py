@@ -33,7 +33,7 @@ model.fc = nn.Linear(num_fc, NUM_CLASSES)
 # Move the model to the specified device
 model = model.to(device)
 
-epochs = 5  # number of single passes on the network
+epochs = 10  # number of single passes on the network
 
 loss_fn = nn.CrossEntropyLoss(ignore_index=26)
 
@@ -43,7 +43,6 @@ transform = transforms.Compose([
     transforms.Grayscale(num_output_channels=1),
     transforms.Resize((200, 200)),
     transforms.ToTensor(),
-    transforms.Normalize(mean=[0.5], std=[0.5])
 ])
 
 dataset = CustomDataset(pixels, labels, transform=transform)

@@ -1,0 +1,5 @@
+Total Correct: 26
+Total Samples: 26
+Accuracy: 100.0%
+
+Process finished with exit code 0

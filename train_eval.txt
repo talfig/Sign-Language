@@ -1,0 +1,13 @@
+Epoch [1/10], Loss: 1.7522
+Epoch [2/10], Loss: 0.0600
+Epoch [3/10], Loss: 0.0176
+Epoch [4/10], Loss: 0.0226
+Epoch [5/10], Loss: 0.0065
+Epoch [6/10], Loss: 0.0253
+Epoch [7/10], Loss: 0.0142
+Epoch [8/10], Loss: 0.0078
+Epoch [9/10], Loss: 0.0144
+Epoch [10/10], Loss: 0.0084
+Total Correct: 77870
+Total Samples: 78000
+Accuracy: 99.83333333333333%
