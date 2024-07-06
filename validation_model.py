@@ -7,7 +7,7 @@ import torchvision.models as models
 from torchvision.models import ResNet18_Weights
 
 from CustomDataset import CustomDataset
-from train_evaluation import evaluate_model, predict_and_display
+from train_evaluate import evaluate_model, predict_and_display
 from upload_npz import load_data_from_npz
 
 # Define your device
