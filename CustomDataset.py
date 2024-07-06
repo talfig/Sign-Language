@@ -12,7 +12,7 @@ class CustomDataset(Dataset):
 
     def __getitem__(self, idx):
         img = self.pixels[idx].reshape(200, 200).astype('float32')
-        label = self.labels[idx].astype('int64')  # Convert labels to Long tensor
+        label = self.labels[idx].astype('int64')
 
         if self.transform:
             img = self.transform(img)
