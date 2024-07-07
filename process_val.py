@@ -9,7 +9,7 @@ def val_to_npz(image_folder, output_npz):
     i = 0
 
     for filename in os.listdir(image_folder):
-        if filename.endswith('.png') or filename.endswith('.jpg'):
+        if filename.endswith('.png') or filename.endswith('.jpg') or filename.endswith('.jpeg'):
             img_path = os.path.join(image_folder, filename)  # Fixed the path construction
             img = Image.open(img_path).convert('L')  # Convert image to grayscale
             labels.append(i)
